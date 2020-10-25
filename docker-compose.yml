@@ -1,0 +1,55 @@
+version: "3.8"
+services:
+    auth-service:
+        build: ./auth-service
+        container_name: auth-service
+        restart:  on-failure
+        ports:
+            - "80:80"
+        networks:
+            bearchat:
+                ipv4_address:
+                    172.28.1.1
+        depends_on:
+          - db-server
+
+        expose:
+            - '80'
+
+    db-server:
+        build: ./db-server
+        container_name: db-server
+        restart:  on-failure
+        ports:
+            - "3306:3306"
+        env_file:
+            - ./db-server/database.env
+        networks:
+            bearchat:
+                ipv4_address:
+                    172.28.1.2
+        expose:
+            - '3306'
+
+    posts-service:
+            build: ./posts
+            container_name: posts-service
+            restart:  on-failure
+            ports:
+                - "81:80"
+            networks:
+                bearchat:
+                    ipv4_address:
+                        172.28.1.3
+            depends_on:
+            - db-server
+
+            expose:
+                - '80'
+
+networks:
+    bearchat:
+        ipam:
+            config:
+                - subnet: 172.28.1.0/16
+                

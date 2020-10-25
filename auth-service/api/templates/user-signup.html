@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>BearChat Email Verification</title>
+    <style>
+      @import url('https://rsms.me/inter/inter.css');
+      .container {
+        font-family: 'Inter', sans-serif; 
+        max-width: 600px;
+        padding: 32px 64px;
+        padding-bottom: 0;
+        margin: auto;
+      }
+      .heading img {
+        width: 10em;
+        box-sizing: border-box;
+      }
+      .content h1 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #333;
+      }
+      .content p {
+        margin-top: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <img src="https://seeklogo.com/images/U/university-of-california-berkeley-athletic-logo-815CB73082-seeklogo.com.png">
+      </div>
+      <div class="content">
+        <h1>We need you to verify your email.</h1>
+        <p>To finish setting up your account, <a href="https://bearchat.com/verify?token={{.Token}}">click here</a> to verify your email.</p>
+        <p style="color: #aaaaaa">If you did not sign up for an account, <a href="https://bearchat.com/verify?token={{.Token}}&invalid">click here</a> 
+        instead to remove your email address from our database.</p>
+      </div>
+    </div>
+  </body>
+</html>
