@@ -35,7 +35,7 @@ def main():
     print('Running posts delete tests...')
     test_delete()
     print('Finished posts delete tests')
-
+    
 def test_create():
     url = "http://localhost:81/api/posts/create"
     payload = {'postBody': 'test content'}

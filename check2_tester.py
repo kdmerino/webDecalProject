@@ -11,7 +11,6 @@ def main():
     print('Running signup tests...')
     test_signup()
     print('Finished signup tests')
-
     print('Running signin tests...')
     test_signin()
     print('Finished signin tests')
@@ -36,7 +35,6 @@ def test_signup():
         fail('access_token not in cookies')
     if 'refresh_token' not in response.cookies:
         fail('refresh_token not in cookies')
-
     url = "http://localhost:80/api/auth/signup"
     payload = {'username': 'test_user', 'email': 'test_email2@berkeley.edu', 'password': 'test_password'}
     response = requests.post(url, json=payload)

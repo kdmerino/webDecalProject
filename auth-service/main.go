@@ -39,6 +39,7 @@ func main() {
 	}
 
 	log.Println("starting go server")
+	log.Println("deez nuts")
 	http.ListenAndServe(":80", router)
 
 }
